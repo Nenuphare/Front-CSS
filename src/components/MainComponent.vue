@@ -4,6 +4,7 @@
             <TitleOne/>
             <MenuOne/>
             <ListePersonnel/>
+            <NextButton/>
         </v-responsive>
     </v-container>
 </template>
@@ -12,5 +13,6 @@
 import TitleOne from './TitleOne.vue';
 import MenuOne from './MenuOne.vue';
 import ListePersonnel from './ListePersonnel.vue';
+import NextButton from './NextButton.vue';
 //
 </script>
