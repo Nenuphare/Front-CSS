@@ -1,48 +1,34 @@
 <template>
-    <v-list lines="three" select-strategy="classic">
-        <v-list-subheader>General</v-list-subheader>
-
-        <v-list-item value="notifications">
-            <template v-slot:prepend="{ isActive }">
-
-                <v-list-item-action start>
-                    <v-checkbox-btn :model-value="isActive"></v-checkbox-btn>
-                </v-list-item-action>
-            </template>
-
-            <v-list-item-title>Notifications</v-list-item-title>
-
-            <v-list-item-subtitle>
-                Notify me about updates to apps or games that I downloaded
-            </v-list-item-subtitle>
-        </v-list-item>
-
-        <v-list-item value="sound">
-            <template v-slot:prepend="{ isActive }">
-                <v-list-item-action start>
-                    <v-checkbox-btn :model-value="isActive"></v-checkbox-btn>
-                </v-list-item-action>
-            </template>
-
-            <v-list-item-title>Sound</v-list-item-title>
-
-            <v-list-item-subtitle>
-                Auto-update apps at any time. Data charges may apply
-            </v-list-item-subtitle>
-        </v-list-item>
-
-        <v-list-item value="widgets">
-            <template v-slot:prepend="{ isActive }">
-                <v-list-item-action start>
-                    <v-checkbox-btn :model-value="isActive"></v-checkbox-btn>
-                </v-list-item-action>
-            </template>
-
-            <v-list-item-title>Auto-add widgets</v-list-item-title>
-
-            <v-list-item-subtitle>
-                Automatically add home screen widgets when downloads complete
-            </v-list-item-subtitle>
-        </v-list-item>
-    </v-list>
+    <v-container>
+        <!-- Utilisation du composant v-list de Vuetify pour la liste scrollable -->
+        <v-list style="overflow-y: auto;" class="mx-auto" cols="12">
+            <!-- Utilisation de v-for pour itérer à travers les éléments de la liste -->
+            <v-list-item-group v-for="(item, index) in itemList" :key="index">
+                <!-- Chaque élément de la liste avec checkbox et nom -->
+                <v-list-item>
+                    <v-list-item-action>
+                        <v-list-item-title>{{ item.name }}</v-list-item-title>
+                        <v-checkbox v-model="item.checked" class="mr-3"></v-checkbox>
+                    </v-list-item-action>
+                </v-list-item>
+            </v-list-item-group>
+        </v-list>
+    </v-container>
 </template>
+  
+<script>
+export default {
+    data() {
+        return {
+            // Liste d'éléments avec noms et état de la checkbox
+            itemList: [
+                { name: 'Élément 1', checked: true },
+                { name: 'Élément 2', checked: false },
+                { name: 'Élément 3', checked: true }
+                // Ajoutez d'autres éléments au besoin
+            ],
+        };
+    },
+};
+</script>
+  
