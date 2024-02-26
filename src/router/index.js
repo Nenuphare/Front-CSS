@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import MainComponentVue from "../component/MainComponent.vue";
 import SecondComponentVue from "../component/SecondComponent.vue";
+import ServiceComponentVue from "@/components/ServiceComponent.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,6 +17,12 @@ const router = createRouter({
       path: "/cuisine",
       name: "cuisine",
       component: SecondComponentVue,
+    },
+    {
+      // Router pour la vue ListView
+      path: "/service",
+      name: "service",
+      component: ServiceComponentVue,
     },
   ],
 });
