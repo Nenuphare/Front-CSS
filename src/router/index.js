@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import MainComponentVue from "../component/MainComponent.vue";
-import SecondComponentVue from "../component/SecondComponent.vue";
+import MainComponentVue from "@/components/MainComponent.vue";
+import SecondComponentVue from "@/components/SecondComponent.vue";
 import ServiceComponentVue from "@/components/ServiceComponent.vue";
 
 const router = createRouter({
